@@ -5,6 +5,24 @@ const bookShelf = document.querySelector('.book-shelf');
 const addBookForm = document.querySelector('.add-book-form');
 
 
+// FUNCTIONS
+// Function to display date
+const date = document.querySelector('.date');
+const displayDate = () => {
+  const today = new Date();
+  const month = today.getMonth();
+  const day = today.getDate();
+  const year = today.getFullYear();
+  const hour = today.getHours();
+  const minute = today.getMinutes();
+  const seconds = today.getSeconds();
+  let time = (hour > 12) ? (`${month +1} ${day} ${year}, ${hour - 12}:${minute}:${seconds} am`) : (`${month +1} ${day} ${year}, ${hour}:${minute}:${seconds} pm`);
+  date.textContent = time;
+}
+
+displayDate()
+
+
 // CLASSES
 // Add Book class as a template to create books
 class Book {
